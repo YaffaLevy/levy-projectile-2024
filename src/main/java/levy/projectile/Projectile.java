@@ -21,6 +21,7 @@ public class Projectile {
     }
 
     public double getX() {
+
         return Math.cos(radians) * velocity * seconds;
     }
 

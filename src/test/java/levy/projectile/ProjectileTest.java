@@ -18,7 +18,7 @@ public class ProjectileTest {
         double actual = p.getX();
 
         //then
-        assertEquals(46.28,actual, .01);
+        assertEquals(46.28,actual,.01);
     }
 
     @Test
@@ -31,26 +31,26 @@ public class ProjectileTest {
         double actual = p.getY();
 
         //then
-        assertEquals( -7.90,actual, 0.01);
+        assertEquals(-7.90,actual,0.01);
     }
 
     @Test
     public void testGetApexTime() {
         //given
-        Projectile p = new Projectile(31, 20);
+        Projectile p = new Projectile(31,20);
         p.setSeconds(2.7);
 
         //when
         double actual = p.getApexTime();
 
         //then
-        assertEquals(1.05, actual, 0.01);
+        assertEquals(1.05, actual,0.01);
     }
 
     @Test
     public void testPeakY() {
         //given
-        Projectile p = new Projectile(31, 65);
+        Projectile p = new Projectile(31,65);
         p.setSeconds(2.7);
 
         //when
