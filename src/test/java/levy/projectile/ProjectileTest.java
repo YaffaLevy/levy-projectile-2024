@@ -1,63 +1,60 @@
 package levy.projectile;
 
-
-
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProjectileTest {
 
     @Test
     public void testGetX() {
-        //given
+        // given
         Projectile p = new Projectile(31, 20);
         p.setSeconds(2.7);
 
         // when
         double actual = p.getX();
 
-        //then
-        assertEquals(46.28,actual,.01);
+        // then
+        assertEquals(46.28, actual, 0.01);
     }
 
     @Test
     public void testGetY() {
-        //given
+        // given
         Projectile p = new Projectile(31, 20);
         p.setSeconds(2.7);
 
-        //when
+        // when
         double actual = p.getY();
 
-        //then
-        assertEquals(-7.90,actual,0.01);
+        // then
+        assertEquals(-7.90, actual, 0.01);
     }
 
     @Test
     public void testGetApexTime() {
-        //given
+        // given
         Projectile p = new Projectile(31,20);
         p.setSeconds(2.7);
 
-        //when
+        // when
         double actual = p.getApexTime();
 
-        //then
-        assertEquals(1.05, actual,0.01);
+        // then
+        assertEquals(1.05, actual, 0.01);
     }
 
     @Test
     public void testPeakY() {
-        //given
+        // given
         Projectile p = new Projectile(31,65);
         p.setSeconds(2.7);
 
-        //when
+        // when
         double actual = p.getPeakY();
 
-        //then
-        assertEquals( 57.18,actual, 0.1);
+        // then
+        assertEquals(57.18, actual, 0.1);
     }
-
 }
+
