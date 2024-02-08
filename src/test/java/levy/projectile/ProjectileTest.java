@@ -34,7 +34,7 @@ public class ProjectileTest {
     @Test
     public void testGetApexTime() {
         // given
-        Projectile p = new Projectile(31,20);
+        Projectile p = new Projectile(31, 20);
         p.setSeconds(2.7);
 
         // when
@@ -47,14 +47,14 @@ public class ProjectileTest {
     @Test
     public void testPeakY() {
         // given
-        Projectile p = new Projectile(31,65);
+        Projectile p = new Projectile(31, 65);
         p.setSeconds(2.7);
 
         // when
         double actual = p.getPeakY();
 
         // then
-        assertEquals(57.18, actual, 0.1);
+        assertEquals(57.18, actual, 0.01);
     }
 }
 

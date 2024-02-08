@@ -21,21 +21,20 @@ public class Projectile {
     }
 
     public double getX() {
-
         return Math.cos(radians) * velocity * seconds;
     }
 
     public double getY() {
-        return sin(radians) * velocity * seconds - 0.5 * 9.8
-                * seconds * seconds;
+        return sin(radians) * velocity * seconds - 0.5 * 9.8 * seconds * seconds;
     }
 
     public double getApexTime() {
         return velocity * sin(radians) / 9.8;
     }
+
     public double getPeakY() {
         return ((sin(radians) * velocity) * (sin(radians) * velocity)) / 19.6;
     }
-
 }
+
 
