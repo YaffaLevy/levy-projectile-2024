@@ -7,7 +7,7 @@ public class Projectile {
     private final double radians;
     private final double velocity;
     private double seconds;
-    private final double gravity = 9.8;
+    private static final double GRAVITY = 9.8;
 
     public Projectile(double angle, double velocity) {
         this.angle = angle;
@@ -24,15 +24,15 @@ public class Projectile {
     }
 
     public double getY() {
-        return sin(radians) * velocity * seconds - 0.5 * gravity * seconds * seconds;
+        return sin(radians) * velocity * seconds - 0.5 * GRAVITY * seconds * seconds;
     }
 
     public double getApexTime() {
-        return velocity * sin(radians) / gravity;
+        return velocity * sin(radians) / GRAVITY;
     }
 
     public double getPeakY() {
-        return ((sin(radians) * velocity) * (sin(radians) * velocity)) / 2 * gravity;
+        return ((sin(radians) * velocity) * (sin(radians) * velocity)) / 2 * GRAVITY;
     }
 }
 
