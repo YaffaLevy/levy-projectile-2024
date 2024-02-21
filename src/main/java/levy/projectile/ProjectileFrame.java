@@ -15,10 +15,10 @@ public class ProjectileFrame extends JFrame {
     private final JSlider angleSlider;
 
     private final JTextField secondsField;
-    private final JLabel Xnothing;
-    private final JLabel Ynothing;
-    private final JLabel PeakYnothing;
-    private final JLabel InterceptXnothing;
+    private final JLabel xNothing;
+    private final JLabel yNothing;
+    private final JLabel peakYNothing;
+    private final JLabel interceptXNothing;
 
     public ProjectileFrame() {
         setSize(400, 600);
@@ -29,21 +29,21 @@ public class ProjectileFrame extends JFrame {
         JLabel velocityLabel = new JLabel("Velocity");
         JLabel angleLabel = new JLabel("Angle");
         JLabel secondsLabel = new JLabel("Seconds");
-        JLabel XLabel = new JLabel("X");
-        Xnothing = new JLabel("");
-        JLabel YLabel = new JLabel("Y");
-        Ynothing = new JLabel(" ");
+        JLabel xLabel = new JLabel("X");
+        xNothing = new JLabel("");
+        JLabel yLabel = new JLabel("Y");
+        yNothing = new JLabel(" ");
         JLabel empty = new JLabel();
-        JLabel PeakY = new JLabel("Peak Y");
-        PeakYnothing = new JLabel();
-        JLabel InterceptX = new JLabel("Intercept X");
-        InterceptXnothing = new JLabel();
+        JLabel peakY = new JLabel("Peak Y");
+        peakYNothing = new JLabel();
+        JLabel interceptX = new JLabel("Intercept X");
+        interceptXNothing = new JLabel();
 
-        final int FPS_MIN = 0;
-        final int FPS_MAX = 90;
-        final int FPS_INIT = 45;
+        final int fpsMin = 0;
+        final int fpsMax = 90;
+        final int fpsInit = 45;
         angleSlider = new JSlider(JSlider.HORIZONTAL,
-                FPS_MIN, FPS_MAX, FPS_INIT);
+                fpsMin, fpsMax, fpsInit);
         angleSlider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -51,14 +51,14 @@ public class ProjectileFrame extends JFrame {
             }
         });
 
-//Turn on labels at major tick marks.
+        // Turn on labels at major tick marks.
         angleSlider.setMajorTickSpacing(10);
         angleSlider.setMinorTickSpacing(5);
         angleSlider.setPaintTicks(true);
         angleSlider.setPaintLabels(true);
 
 
-         velocityField = new JTextField();
+        velocityField = new JTextField();
         velocityField.getDocument().addDocumentListener(new SimpleDocumentListener() {
             @Override
             public void update(DocumentEvent e) {
@@ -66,7 +66,7 @@ public class ProjectileFrame extends JFrame {
             }
             // implement the methods
         });
-         secondsField = new JTextField("0");
+        secondsField = new JTextField("0");
         secondsField.getDocument().addDocumentListener(new SimpleDocumentListener() {
             @Override
             public void update(DocumentEvent e) {
@@ -75,7 +75,7 @@ public class ProjectileFrame extends JFrame {
             // implement the methods
         });
 
-        JButton calculate = new JButton("Calculate");
+        JButton calculateButton = new JButton("Calculate");
 
         add(velocityLabel);
         add(velocityField);
@@ -86,22 +86,22 @@ public class ProjectileFrame extends JFrame {
         add(angleLabel);
         add(angleSlider);
 
-        add(XLabel);
-        add(Xnothing);
+        add(xLabel);
+        add(xNothing);
 
-        add(YLabel);
-        add(Ynothing);
+        add(yLabel);
+        add(yNothing);
 
-        add(PeakY);
-        add(PeakYnothing);
+        add(peakY);
+        add(peakYNothing);
 
-        add(InterceptX);
-        add(InterceptXnothing);
+        add(interceptX);
+        add(interceptXNothing);
 
         add(empty);
-        add(calculate);
+        add(calculateButton);
 
-        calculate.addActionListener(new ActionListener() {
+        calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 calculate();
@@ -117,11 +117,9 @@ public class ProjectileFrame extends JFrame {
                 Double.parseDouble(velocityField.getText()));
         projectile.setSeconds(
                 Double.parseDouble(secondsField.getText()));
-        Xnothing.setText(Double.toString(projectile.getX()));
-        Ynothing.setText(Double.toString(projectile.getY()));
-        PeakYnothing.setText(Double.toString(projectile.getPeakY()));
-        InterceptXnothing.setText(Double.toString(projectile.getInterceptX()));
+        xNothing.setText(Double.toString(projectile.getX()));
+        yNothing.setText(Double.toString(projectile.getY()));
+        peakYNothing.setText(Double.toString(projectile.getPeakY()));
+        interceptXNothing.setText(Double.toString(projectile.getInterceptX()));
     }
 }
-
-
