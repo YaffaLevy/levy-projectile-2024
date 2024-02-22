@@ -22,18 +22,9 @@ public class ProjectileFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setLayout(new GridLayout(8, 2));
-        JLabel velocityLabel = new JLabel("Velocity");
+
         JLabel angleLabel = new JLabel("Angle");
         JLabel secondsLabel = new JLabel("Seconds");
-        JLabel xLabel = new JLabel("X");
-        nothingX = new JLabel("");
-        JLabel yLabel = new JLabel("Y");
-        nothingY = new JLabel(" ");
-        JLabel empty = new JLabel();
-        JLabel peakY = new JLabel("Peak Y");
-        nothingPeakY = new JLabel();
-        JLabel interceptX = new JLabel("Intercept X");
-        interceptNothingX = new JLabel();
 
         final int fpsMin = 0;
         final int fpsMax = 90;
@@ -56,7 +47,7 @@ public class ProjectileFrame extends JFrame {
 
         secondsField.getDocument().addDocumentListener((SimpleDocumentListener) e -> calculate());
 
-
+        JLabel velocityLabel = new JLabel("Velocity");
         add(velocityLabel);
         add(velocityField);
 
@@ -66,21 +57,30 @@ public class ProjectileFrame extends JFrame {
         add(angleLabel);
         add(angleSlider);
 
+        JLabel xLabel = new JLabel("X");
         add(xLabel);
+        nothingX = new JLabel("");
         add(nothingX);
 
+        JLabel yLabel = new JLabel("Y");
         add(yLabel);
+        nothingY = new JLabel(" ");
         add(nothingY);
 
+        JLabel peakY = new JLabel("Peak Y");
         add(peakY);
+        nothingPeakY = new JLabel();
         add(nothingPeakY);
 
+        JLabel interceptX = new JLabel("Intercept X");
         add(interceptX);
+        interceptNothingX = new JLabel();
         add(interceptNothingX);
 
+        JLabel empty = new JLabel();
         add(empty);
-        JButton calculateButton = new JButton("Calculate");
 
+        JButton calculateButton = new JButton("Calculate");
         add(calculateButton);
 
         calculateButton.addActionListener(e -> calculate());
