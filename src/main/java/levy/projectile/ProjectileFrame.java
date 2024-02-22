@@ -23,9 +23,6 @@ public class ProjectileFrame extends JFrame {
 
         setLayout(new GridLayout(8, 2));
 
-        JLabel angleLabel = new JLabel("Angle");
-        JLabel secondsLabel = new JLabel("Seconds");
-
         final int fpsMin = 0;
         final int fpsMax = 90;
         final int fpsInit = 45;
@@ -51,19 +48,21 @@ public class ProjectileFrame extends JFrame {
         add(velocityLabel);
         add(velocityField);
 
+        JLabel secondsLabel = new JLabel("Seconds");
         add(secondsLabel);
         add(secondsField);
 
+        JLabel angleLabel = new JLabel("Angle");
         add(angleLabel);
         add(angleSlider);
 
-        JLabel xLabel = new JLabel("X");
-        add(xLabel);
+        JLabel labelX = new JLabel("X");
+        add(labelX);
         nothingX = new JLabel("");
         add(nothingX);
 
-        JLabel yLabel = new JLabel("Y");
-        add(yLabel);
+        JLabel labelY = new JLabel("Y");
+        add(labelY);
         nothingY = new JLabel(" ");
         add(nothingY);
 
