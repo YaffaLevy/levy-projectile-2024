@@ -5,31 +5,32 @@ import java.awt.*;
 
 public class ProjectileGraph extends JComponent {
 
-    private Projectile projectile = new Projectile(0,0);
+    private Projectile projectile = new Projectile(0, 0);
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         g.translate(0, getHeight());
-        g.drawString("(100, 100)", 100, -100);
-        g.setColor(Color.CYAN);
-        g.drawLine(0, 0, getWidth(), -getHeight());
-        g.drawRect(200, -200, 50, 50);
-        g.setColor(Color.MAGENTA);
-        g.fillRect(200, -200, 50, 50);
-        g.setColor(Color.ORANGE);
-        g.drawOval(200, -200, 50, 50);
+        g.setColor(Color.BLACK);
+        g.fillOval((int) projectile.getInterceptX() / 2, (int) -projectile.getPeakY(), 10, 10);
+        int nowX;
+        int nowY;
 
-        g.fillOval(
-                (int) projectile.getX(),
-                (int) -projectile.getY(),
-                10,
-                10
-        );
-    }
+        projectile.setSeconds(0);
 
-        public void setProjectile(Projectile projectile){
-            this.projectile = projectile;
-            repaint();
+        for (int t = 0; t <= projectile.getApexTime() * 2 + 1; t++) {
+            g.setColor(Color.BLACK);
+            nowX = (int) projectile.getX();
+            nowY = (int) projectile.getY();
+            projectile.setSeconds(t);
+            g.drawLine(nowX, -nowY, (int) projectile.getX(), (int) -projectile.getY());
+
         }
+
+    }
+    public void setProjectile(Projectile projectile) {
+        this.projectile = projectile;
+        repaint();
+    }
 }
+
