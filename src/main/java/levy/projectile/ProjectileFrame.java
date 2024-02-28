@@ -7,8 +7,10 @@ import java.awt.*;
 
 public class ProjectileFrame extends JFrame {
 
+    static int fpsMin = 0;
+    static final int fpsMax = 90;
+    static final int fpsInit = 45;
     private final JTextField velocityField;
-
     private final JSlider angleSlider;
 
     private final JTextField secondsField;
@@ -19,7 +21,7 @@ public class ProjectileFrame extends JFrame {
     private ProjectileGraph graph = new ProjectileGraph();
 
     public ProjectileFrame() {
-        setSize(1400, 600);
+        setSize(1000, 600);
         setTitle("Projectile Calculator");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -32,9 +34,6 @@ public class ProjectileFrame extends JFrame {
 
         west.setLayout(new GridLayout(8, 2));
 
-        final int fpsMin = 0;
-        final int fpsMax = 90;
-        final int fpsInit = 45;
         angleSlider = new JSlider(JSlider.HORIZONTAL,
                 fpsMin, fpsMax, fpsInit);
         angleSlider.addChangeListener(e -> calculate());
