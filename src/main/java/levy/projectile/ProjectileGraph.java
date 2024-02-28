@@ -12,7 +12,7 @@ public class ProjectileGraph extends JComponent {
         super.paintComponent(g);
         g.translate(0, getHeight());
         g.setColor(Color.BLACK);
-        g.fillOval((int) projectile.getInterceptX() / 2, (int) -projectile.getPeakY(), 10, 10);
+        g.fillOval((int) projectile.getInterceptX() / 2 -5 , (int) -projectile.getPeakY() -5 , 10, 10);
         int nowX;
         int nowY;
 
