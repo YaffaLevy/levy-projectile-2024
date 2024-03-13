@@ -24,7 +24,7 @@ public class Projectile {
     }
 
     public double getY() {
-        return sin(radians) * velocity * seconds - 0.5 * GRAVITY * seconds * seconds;
+        return sin(radians) * velocity * seconds - (0.5 * GRAVITY * (seconds * seconds));
     }
 
     public double getApexTime() {
