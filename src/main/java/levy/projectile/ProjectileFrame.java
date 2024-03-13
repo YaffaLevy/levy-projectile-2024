@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class ProjectileFrame extends JFrame {
 
-    static int fpsMin = 0;
+    static final int fpsMin = 0;
     static final int fpsMax = 90;
     static final int fpsInit = 45;
     private final JTextField velocityField;
