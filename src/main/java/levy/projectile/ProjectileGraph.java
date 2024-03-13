@@ -28,6 +28,7 @@ public class ProjectileGraph extends JComponent {
         }
 
     }
+
     public void setProjectile(Projectile projectile) {
         this.projectile = projectile;
         repaint();
